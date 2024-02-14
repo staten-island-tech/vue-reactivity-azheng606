@@ -1,9 +1,15 @@
 <template>
-    <div>
+
+
+    <div class="card" >
         <h2>{{ Destination.name }}</h2>
         <img :src="Destination.img" alt=""/>
-        <h3>{{ clicked }}</h3>
+        <h3> {{ Destination.price }}</h3>
         <button @click = "increment">Click me</button>
+    </div>
+
+    <div class="cart">
+        <h3>{{ clicked }}</h3>
     </div>
 </template>
 
@@ -16,13 +22,18 @@ const props = defineProps ({
 //clicker logic 
 const clicked = ref(0);
 function increment (){ 
-    clicked.value++;
+   Destination.price (push)
+ clicked.value++;
 }
 </script>
 
 <style scoped>
-img {
-    width: 80% ;
-}
+.card {
+width: 32% ;
+background-color: aliceblue;}
 
+img {
+    width: 70% ;
+}
 </style>
+
