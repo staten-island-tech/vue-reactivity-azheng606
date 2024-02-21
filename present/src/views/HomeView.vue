@@ -1,15 +1,24 @@
 <template>
   <div>
+    <h1>Apple Store</h1>
+    <div class="destinations ">
     <DestCard v-for ="destination in destinations" 
     :key="destination.name" 
     :Destination="destination"/> 
   </div>
+ <div>
+  <TheWelcome :cart = "cart"/>
+ </div>
+</div>
+
 
   
 </template>
 
 <script setup>
-import DestCard from "@/components/DestCard.vue";
+import DestCard from "@/components/DestCard.vue"; 
+import TheWelcome from "@/components/TheWelcome.vue";
+
 const destinations = [
         {
           name: "iphone SE",
@@ -81,9 +90,15 @@ const destinations = [
           price: "$3499",
           img: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/vision-pro-card-66-vision-pro-202401?wid=1172&hei=588&fmt=p-jpg&qlt=95&.v=1702510799485"
         },
-      ]
+      ];
+
+
 </script>
 
 <style scoped>
-
+.destinations { 
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; 
+}
 </style>
