@@ -1,24 +1,29 @@
 <template>
   <div class="shopping">
     <h2>Shopping Cart</h2>
-    <div v-if="cart.length === 0">
-      <p>No items in the cart</p>
+    <div class = "hello" v-if="cart.length === 0">
+      <h2>{{ cart.length }}</h2>
+      <p>No items in the cart</p> 
     </div>
     <div v-else>
-      <div v-for="(item) in cart" :key="item.name" class="cart-item">
+      <div v-for="(item, index) in cart" :key="index">
         <h2>{{ item.name }}</h2>
         <h3>{{ item.price }}</h3>
+
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { defineProps } from "vue"; 
+
 
 const props = defineProps({
   cart: Array,
+  
 });
+
+
 </script>
 
 <style scoped>
@@ -35,6 +40,9 @@ h2, h3 {
   color: white;
 }
 
+.hello { background-color: black;}
+
+p { background-color: black;}
 .cart-item {
   margin-bottom: 10px;
 }

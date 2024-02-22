@@ -1,21 +1,24 @@
 <template>
   <div>
     <h1>Apple Store</h1>
-    <div class="destinations ">
+    <div class="destinations">
       <DestCard v-for="destination in destinations" 
                 :key="destination.name" 
                 :Destination="destination"/> 
-  </div>
+    </div>
 
- <div>
-  <TheWelcome :cart = "cart"/>
- </div>
-</div>
+    <div>
+      <TheWelcome :cart="cart"/> 
+    </div>
+  </div>
 </template>
 
 <script setup>
 import DestCard from "@/components/DestCard.vue"; 
 import TheWelcome from "@/components/TheWelcome.vue";
+import { ref } from 'vue';
+
+const cart = ref([]);
 
 const destinations = [
         {
@@ -90,7 +93,7 @@ const destinations = [
         },
       ];
 
-
+  
 </script>
 
 <style scoped>
