@@ -2,17 +2,15 @@
   <div>
     <h1>Apple Store</h1>
     <div class="destinations ">
-    <DestCard v-for ="destination in destinations" 
-    :key="destination.name" 
-    :Destination="destination"/> 
+      <DestCard v-for="destination in destinations" 
+                :key="destination.name" 
+                :Destination="destination"/> 
   </div>
+
  <div>
   <TheWelcome :cart = "cart"/>
  </div>
 </div>
-
-
-  
 </template>
 
 <script setup>

@@ -1,50 +1,50 @@
-
 <template>
-    <div class="card" >
+    <div class="card">
         <h2>{{ Destination.name }}</h2>
         <img :src="Destination.img" alt=""/>
-        <h3> {{ Destination.price }}</h3>
-    
-        <button @click = "addto(Destination)">Add to Cart</button>
-    </div> 
- </template>
+        <h3>{{ Destination.price }}</h3>
+        <button @click="addToCart"> Add to Cart</button>
+    </div>
 
-
+</template>
 
 <script setup>
-import {ref} from "vue";
-import {defineProps} from "vue";
+import { defineProps } from "vue";
+
 const props = defineProps({
   Destination: Object,
- 
 });
+import { ref } from 'vue';
 
-
-//clicker logic 
-const cart = ref([]); 
-function addto (Destination) {
-cart.value.push(Destination);
-    console.log (cart.value);
- }
- 
-
-
+const cart = ref([]);
+function addToCart(Destination) {
+  cart.value.push(Destination);
+  console.log (cart.value)
+}
 </script>
- 
+
+
 <style scoped>
 .card {
-width: 32% ;
-background-color: aliceblue;
+  width: 32%;
+  background-color: rgb(13, 93, 162);
+}
+
+h2, h3 {
+  background-color: rgb(13, 93, 162);
+}
+
+button {
+  background-color: rgb(13, 93, 162);
+  margin-left: 30%;
 }
 
 img {
-    width: 70% ;
-    height: 70%;
+  width: 70%;
+  height: 70%;
+  margin-left: 14%;
 }
-
 </style>
-
-
 
 
 
@@ -84,3 +84,5 @@ function totalprice (){
 <!--     <div class = "tot">
         <h3> Total Price: ${{ totprice ()}}</h3>
     </div> -->
+
+    
