@@ -1,33 +1,38 @@
 <template>
   <div class="shopping">
     <h2>Shopping Cart</h2>
-    <div class = "hello" v-if="cart.length === 0">
-      <h2>{{ cart.length }}</h2>
-      <p>No items in the cart</p> 
+    <div class="hola" v-if="cart && cart.length === 0">
+      <p>No items in the cart</p>
     </div>
     <div v-else>
-      <div v-for="(item, index) in cart" :key="index">
-        <h2>{{ item.name }}</h2>
-        <h3>{{ item.price }}</h3>
+        <h2>{{ Item.name }}</h2>
+        <h3>{{ Item.price }}</h3>
+
 
       </div>
     </div>
-  </div>
 </template>
+
 
 <script setup>
 
 
+
+
 const props = defineProps({
   cart: Array,
-  
+  Item: Object,
+ 
 });
+
+
 
 
 </script>
 
+
 <style scoped>
-.shopping { 
+.shopping {
   background-color: black;
   color: white;
   padding: 20px;
@@ -35,12 +40,15 @@ const props = defineProps({
   margin-top: 20%;
 }
 
-h2, h3 { 
+
+h2, h3 {
   background-color: black;
   color: white;
 }
 
+
 .hello { background-color: black;}
+
 
 p { background-color: black;}
 .cart-item {

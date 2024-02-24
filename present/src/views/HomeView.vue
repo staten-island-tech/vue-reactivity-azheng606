@@ -4,11 +4,14 @@
     <div class="destinations">
       <DestCard v-for="destination in destinations" 
                 :key="destination.name" 
-                :Destination="destination"/> 
+                :Destination="destination"
+                :cart="cart"/> 
     </div>
 
     <div>
-      <TheWelcome :cart="cart"/> 
+      <TheWelcome v-for="item in cart" 
+                :key="item.name" 
+                :Item="item"/> 
     </div>
   </div>
 </template>
@@ -16,9 +19,12 @@
 <script setup>
 import DestCard from "@/components/DestCard.vue"; 
 import TheWelcome from "@/components/TheWelcome.vue";
-import { ref } from 'vue';
 
-const cart = ref([]);
+
+const cart = [ {
+  name: "hello" ,
+price: "$353",}
+];
 
 const destinations = [
         {
