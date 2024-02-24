@@ -1,5 +1,78 @@
 <template>
   <div class="card">
+    <h2>{{ destination.name }}</h2>
+    <img :src="destination.img" alt=""/>
+    <h3>{{ destination.price }}</h3>
+    <button @click="addToCart"> Add to Cart</button>
+  </div>
+</template>
+
+<script setup>
+import { defineProps, defineEmits } from 'vue';
+
+const props = defineProps({
+  destination: Object,
+  cart: Array
+});
+
+const emits = defineEmits(['add-to-cart']);
+
+function addToCart () {
+  emits('add-to-cart', props.destination);
+};
+</script>
+
+<style scoped>
+.card {
+width: 32%;
+background-color: rgb(13, 93, 162);
+}
+
+
+h2, h3 {
+background-color: rgb(13, 93, 162);
+}
+.first, .second{
+  background-color: black;
+  color: white;
+}
+button {
+background-color: rgb(13, 93, 162);
+margin-left: 30%;
+}
+.shopping {background-color: black;
+  color: white;}
+img {
+width: 70%;
+height: 70%;
+margin-left: 14%;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <template>
+  <div class="card">
       <h2>{{ Destination.name }}</h2>
       <img :src="Destination.img" alt=""/>
       <h3>{{ Destination.price }}</h3>
@@ -64,7 +137,7 @@ height: 70%;
 margin-left: 14%;
 }
 </style>
-
+ -->
 
 
 
