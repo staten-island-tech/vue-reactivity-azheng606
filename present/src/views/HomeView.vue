@@ -24,6 +24,10 @@ import { ref } from 'vue';
 
 const cart = ref([]);
 
+function addToCart (item) {
+  cart.value.push(item);
+};
+
 const destinations = [
         {
           name: "iphone SE",
@@ -97,9 +101,6 @@ const destinations = [
         },
       ];
 
-function addToCart (item) {
-  cart.value.push(item);
-};
 
 </script>
 

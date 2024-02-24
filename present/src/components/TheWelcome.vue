@@ -73,9 +73,9 @@ p { background-color: black;}
       <div v-for="(item) in cart" :key="item.name" class="cart-item">
         <h2>{{ item.name }}</h2>
         <h3>{{ item.price }}</h3>
-        <button @click="removeItem(index)">Remove</button>
       </div>
-      <div class = "total"> </div>
+      <div class = "total"> 
+      </div>
     </div>
 
   </div>
@@ -87,6 +87,8 @@ import { defineProps } from 'vue';
 const props = defineProps({
   cart: Array
 });
+
+
 
 
 </script>
