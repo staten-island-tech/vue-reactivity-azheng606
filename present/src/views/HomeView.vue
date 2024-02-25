@@ -107,8 +107,10 @@ const destinations = [
 <style scoped>
 .destinations { 
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px; 
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
 }
 </style>
      

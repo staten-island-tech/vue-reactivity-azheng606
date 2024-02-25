@@ -64,20 +64,22 @@ p { background-color: black;}
 
 
  <template>
+  <h2>Shopping Cart</h2>
   <div class="shopping">
-    <h2>Shopping Cart</h2>
-    <div class="hola" v-if="cart.length === 0">
+    
+    <div  v-if="cart.length === 0">
       <p>No items in the cart</p>
     </div>
     <div v-else>
-      <div v-for="(item) in cart" :key="item.name" class="cart-item">
-        <h2>{{ item.name }}</h2>
-        <h3>{{ item.price }}</h3>
+      <div class = "shop-card">
+        <div v-for="(item) in cart" :key="item.name" class="cart-item">
+        <h3>{{ item.name }}</h3>
+        <img :src="item.img" alt=""/>
+        <h4>{{ item.price }}</h4>
       </div>
-      <div class = "total"> 
       </div>
+      
     </div>
-
   </div>
 </template>
 
@@ -95,18 +97,36 @@ const props = defineProps({
 
 <style scoped>
 .shopping {
-  background-color: black;
+  
   color: white;
   padding: 20px;
   margin-bottom: 10px;
-  margin-top: 20%;
+  align-items: center;
+  height: 50%;
+  display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
 }
 
 
-h2, h3, .cart-item, p {
+
+h2 { color: black;
+  margin-top: 10%;}
+
+h4, h3, .cart-item, p {
   background-color: black;
   color: white;
+  text-align: center;
 }
 
+.cart-item { 
+  width: 37vw;
+}
 
+img {
+width: 16vw;
+height: 25vh;
+}
 </style>
