@@ -8,18 +8,7 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmits } from 'vue';
 
-const props = defineProps({
-  destination: Object,
-  cart: Array
-});
-
-const emits = defineEmits(['add-to-cart']);
-
-function addToCart () {
-  emits('add-to-cart', props.destination);
-};
 </script>
 
 <style scoped>
