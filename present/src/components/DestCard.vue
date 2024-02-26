@@ -8,10 +8,18 @@
 </template>
 
 <script setup>
-
+import { defineProps, defineEmits } from 'vue';
+const props = defineProps({
+ destination: Object,
+ cart: Array
+});
+const emits = defineEmits(['add-to-cart']);
+function addToCart () {
+ emits('add-to-cart', props.destination);
+};
 </script>
-
 <style scoped>
+
 .card {
   height: 50%;
     width: 25%;
@@ -30,7 +38,7 @@ text-align: center;
 
 button {
 background-color: var(--secondary);
-margin-left: 35%;
+margin-left: 40%;
 }
 
 img {
