@@ -7,7 +7,7 @@
                 :key="destination.name" 
                 :destination="destination" 
                 :cart="cart"
-                @add-to-cart="addToCart"/> 
+                @addtocart="addToCart"/> 
     </div>
 
     <div>

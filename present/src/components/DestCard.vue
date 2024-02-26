@@ -13,9 +13,9 @@ const props = defineProps({
  destination: Object,
  cart: Array
 });
-const emits = defineEmits(['add-to-cart']);
+const emits = defineEmits(['addtocart']);
 function addToCart () {
- emits('add-to-cart', props.destination);
+ emits('addtocart', props.destination);
 };
 </script>
 <style scoped>

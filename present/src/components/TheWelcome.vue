@@ -72,15 +72,17 @@ p { background-color: black;}
     </div>
     <div v-else>
       <div class = "shop-card">
-        <div v-for="(item) in cart" :key="item.name" class="cart-item">
+        <div v-for="item in cart" :key="item.name" class="cart-item">
         <h3>{{ item.name }}</h3>
         <img :src="item.img" alt=""/>
         <h4>{{ item.price }}</h4>
+      <button @click="removecard" class = "gone"> Remove from Cart</button> 
       </div>
       </div>
       
     </div>
   </div>
+ <h3> {{ totalPrice(cart) }}</h3> 
 </template>
 
 <script setup>
@@ -90,7 +92,20 @@ const props = defineProps({
   cart: Array
 });
 
-
+function removecard() { 
+            const button = document.querySelectorAll(".gone");
+            button.forEach((button) => 
+            button.addEventListener ("click", function (button){
+                button.target.parentElement.remove()}))};
+       
+function totalPrice(arr) { 
+    const total = 0;
+    for (let i = 0; i < arr.length; i++) {
+      const each = arr [i]
+      each.forEach((each) => total += each.price);
+    }
+    return total;
+} 
 
 
 </script>
