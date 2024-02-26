@@ -2,7 +2,7 @@
   <div class="card">
     <h2>{{ destination.name }}</h2>
     <img :src="destination.img" alt=""/>
-    <h3>{{ destination.price }}</h3>
+    <h3>{{ "$" + destination.price }}</h3>
     <button @click="addToCart"> Add to Cart</button>
   </div>
 </template>

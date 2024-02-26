@@ -7,8 +7,7 @@
                 :key="destination.name" 
                 :destination="destination" 
                 :cart="cart"
-                @addtocart="addToCart"
-                @totvalue = "totalPrice"/> 
+                @addtocart="addToCart"/> 
     </div>
 
     <div>
@@ -30,12 +29,7 @@ function addToCart (item) {
 };
 
 
-function totalPrice() { 
-let sum = 0;
-cart.forEach((el) => sum += el.price);
-console.log (sum);
 
- } 
 
 const destinations = [
         {
