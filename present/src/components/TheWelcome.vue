@@ -82,15 +82,23 @@ p { background-color: black;}
       
     </div>
   </div>
- <h3> {{ totalPrice(cart) }}</h3> 
+  <h3>{{ total }}</h3>
+  
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
 
+import { defineProps, defineEmits } from 'vue';
 const props = defineProps({
-  cart: Array
+ destination: Object,
+ cart: Array
 });
+const emits = defineEmits(['totvalue']);
+function totvalue () {
+ emits('totvalue', props.cart);
+};
+
+const total = totvalue ();
 
 function removecard() { 
             const button = document.querySelectorAll(".gone");
@@ -98,14 +106,7 @@ function removecard() {
             button.addEventListener ("click", function (button){
                 button.target.parentElement.remove()}))};
        
-function totalPrice(arr) { 
-    const total = 0;
-    for (let i = 0; i < arr.length; i++) {
-      const each = arr [i]
-      each.forEach((each) => total += each.price);
-    }
-    return total;
-} 
+
 
 
 </script>
