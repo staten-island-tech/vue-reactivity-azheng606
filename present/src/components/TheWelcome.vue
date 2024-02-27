@@ -74,13 +74,13 @@ p { background-color: black;}
         <div v-for="item in cart" :key="item.name" class="cart-item">
           <h3>{{ item.name }}</h3>
           <img :src="item.img" alt=""/>
-          <h4>{{ item.price }}</h4>
-          <button @click="removecard(item)" class="gone"> Remove from Cart</button> 
+          <h4>${{ item.price }}</h4>
+          <button @click="removecard()" class="gone"> Remove from Cart</button> 
         </div>
       </div>
     </div>
   </div>
-  <h3>Total Price: ${{ calculateTotal() }}</h3>
+ <h3>Total Price: ${{ calculateTotal() }}</h3> 
 </template>
 
 <script setup>
@@ -90,26 +90,34 @@ const props = defineProps({
   destination: Object,
   cart: Array
 });
+function removecard() { 
+const button = document.querySelectorAll(".gone");
+            button.forEach((button) => 
+            button.addEventListener ("click", function (button){
+                button.target.parentElement.remove()}))
+                const removing = props.cart
+           removing.splice (0,1)  
 
-function calculateTotal() {
-  let total = 0; // Reset total to 0 each time calculateTotal is called
+  };
+       
+  function calculateTotal() {
+  let total = 0;
   props.cart.forEach(item => {
     total += item.price;
   });
   return total;
 }
 
+/* 
 
-function removecard() { 
-            const button = document.querySelectorAll(".gone");
-            button.forEach((button) => 
-            button.addEventListener ("click", function (button){
-                button.target.parentElement.remove()}))
-              return calculateTotal()};
-       
-
-
-
+   function calculateTotal() {
+    const arr= props.cart
+  let total = 0; 
+  for (let i=0; i<arr.length; i++){
+total += arr[i].price
+}
+console.log (total)
+return (total)} */
 </script>
 
 <style scoped>

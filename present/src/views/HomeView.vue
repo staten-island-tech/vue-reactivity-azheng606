@@ -28,9 +28,6 @@ function addToCart (item) {
   cart.value.push(item);
 };
 
-
-
-
 const destinations = [
         {
           name: "iphone SE",
