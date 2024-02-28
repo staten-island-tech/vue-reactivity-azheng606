@@ -19,13 +19,15 @@
 <script setup>
 import DestCard from "@/components/DestCard.vue"; 
 import TheWelcome from "@/components/TheWelcome.vue";
-
+import { store } from "../stores/store"
 import { ref } from 'vue';
+
 
 const cart = ref([]);
 
 function addToCart (item) {
   cart.value.push(item);
+  store.total = item.price
 };
 
 const destinations = [
@@ -106,12 +108,12 @@ const destinations = [
 
 <style scoped>
 .destinations { 
-  display: flex;
-    flex-wrap: wrap;
+  display: flex; 
+  flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
-    align-content: center;
-}
+    align-content: center; 
+} 
 </style>
      
      

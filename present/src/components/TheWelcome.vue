@@ -80,24 +80,20 @@ p { background-color: black;}
       </div>
     </div>
   </div>
- <h3>Total Price: ${{ calculateTotal() }}</h3> 
+ <h3>Total Price: ${{ store.total }}</h3> 
 </template>
 
 <script setup>
 import { defineProps } from 'vue';
+import { store } from "../stores/store"
 
 const props = defineProps({
   destination: Object,
   cart: Array
 });
-function removecard() { 
-const button = document.querySelectorAll(".gone");
-            button.forEach((button) => 
-            button.addEventListener ("click", function (button){
-                button.target.parentElement.remove()}))
-                const removing = props.cart
-           removing.splice (0,1)  
-
+function removecard(item) { 
+  cart.splice(item)
+  calculateTotal()
   };
        
   function calculateTotal() {
@@ -126,13 +122,11 @@ return (total)} */
   color: white;
   padding: 20px;
   margin-bottom: 10px;
-  align-items: center;
-  height: 50%;
-  display: flex;
-    flex-wrap: wrap;
+  display: flex; 
+  flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
-    align-content: center;
+    align-content: center; 
 }
 
 
@@ -145,6 +139,7 @@ h4, h3, .cart-item, p {
   color: white;
   text-align: center;
 }
+
 
 .cart-item { 
   width: 37vw;
