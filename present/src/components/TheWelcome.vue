@@ -104,6 +104,7 @@ function removecard(item) {
   return total;
 }
 
+
 /* 
 
    function calculateTotal() {

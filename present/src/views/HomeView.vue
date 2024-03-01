@@ -1,4 +1,3 @@
-
 <template>
   <div>
     <h1>Apple Store</h1>
@@ -29,6 +28,10 @@ function addToCart (item) {
   cart.value.push(item);
   store.total = item.price
 };
+
+
+
+
 
 const destinations = [
         {
