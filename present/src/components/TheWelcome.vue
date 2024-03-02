@@ -126,7 +126,6 @@ h2 { color: black;
 h4, h3, .cart-item, p {
   background-color: black;
   color: white;
-  width: 50%;
   text-align: center;
   
 }
