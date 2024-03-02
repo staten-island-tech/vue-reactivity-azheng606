@@ -75,7 +75,7 @@ p { background-color: black;}
           <h3>{{ item.name }}</h3>
           <img :src="item.img" alt=""/>
           <h4>${{ item.price }}</h4>
-          <button @click="removecard()" class="gone"> Remove from Cart</button> 
+          <button @click="removeCard(item)" class="gone"> Remove from Cart</button> 
         </div>
       </div>
     </div>
@@ -91,16 +91,19 @@ const props = defineProps({
   destination: Object,
   cart: Array
 });
-function removecard(item) { 
-  cart.splice(item)
-  calculateTotal()
-  };
+function removeCard(item) {
+  const index = props.cart.indexOf(item); // Find index of the item in cart
+    props.cart.splice(index, 1); // Remove item from cart array
+    calculateTotal(); // Update total price
+  
+}
        
   function calculateTotal() {
   let total = 0;
   props.cart.forEach(item => {
     total += item.price;
   });
+  store.total=total
   return total;
 }
 
