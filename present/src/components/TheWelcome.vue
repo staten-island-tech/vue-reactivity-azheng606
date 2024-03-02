@@ -107,17 +107,6 @@ function removeCard(item) {
   return total;
 }
 
-
-/* 
-
-   function calculateTotal() {
-    const arr= props.cart
-  let total = 0; 
-  for (let i=0; i<arr.length; i++){
-total += arr[i].price
-}
-console.log (total)
-return (total)} */
 </script>
 
 <style scoped>
@@ -126,11 +115,7 @@ return (total)} */
   color: white;
   padding: 20px;
   margin-bottom: 10px;
-  display: flex; 
-  flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    align-content: center; 
+  
 }
 
 
@@ -141,7 +126,9 @@ h2 { color: black;
 h4, h3, .cart-item, p {
   background-color: black;
   color: white;
+  width: 50%;
   text-align: center;
+  
 }
 
 
