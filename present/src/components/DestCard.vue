@@ -38,7 +38,8 @@ text-align: center;
 
 button {
 background-color: var(--secondary);
-margin-left: 40%;
+
+
 }
 
 img {

@@ -80,7 +80,7 @@ p { background-color: black;}
       </div>
     </div>
   </div>
- <h3>Total Price: ${{ store.total }}</h3> 
+ <h3>Total Price: ${{ calculateTotal()}}</h3> 
 </template>
 
 <script setup>
@@ -94,7 +94,7 @@ const props = defineProps({
 function removeCard(item) {
   const index = props.cart.indexOf(item); // Find index of the item in cart
     props.cart.splice(index, 1); // Remove item from cart array
-    calculateTotal(); // Update total price
+    // Update total price
   
 }
        
@@ -108,33 +108,30 @@ function removeCard(item) {
 }
 
 </script>
-
 <style scoped>
 .shopping {
   
   color: white;
   padding: 20px;
   margin-bottom: 10px;
-  
+  align-items: center;
+  height: 50%;
+  display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
 }
-
-
-
 h2 { color: black;
   margin-top: 10%;}
-
 h4, h3, .cart-item, p {
   background-color: black;
   color: white;
   text-align: center;
-  
 }
-
-
 .cart-item { 
   width: 37vw;
 }
-
 img {
 width: 16vw;
 height: 25vh;
