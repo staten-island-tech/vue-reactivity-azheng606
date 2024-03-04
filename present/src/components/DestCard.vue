@@ -45,7 +45,6 @@ background-color: var(--secondary);
 img {
 width: 20vw;
 height: 25vh;
-margin-left: 9%;
 }
 
 :root 

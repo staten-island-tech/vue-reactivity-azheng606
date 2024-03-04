@@ -1,68 +1,3 @@
-<!-- <template>
-  <div class="shopping">
-    <h2>Shopping Cart</h2>
-    <div class="hola" v-if="cart && cart.length === 0">
-      <p>No items in the cart</p>
-    </div>
-    <div v-else>
-        <h2>{{ Item.name }}</h2>
-        <h3>{{ Item.price }}</h3>
-
-
-      </div>
-    </div>
-</template>
-
-
-<script setup>
-
-
-
-
-const props = defineProps({
-  cart: Array,
-  Item: Object,
- 
-});
-
-
-
-
-</script>
-
-
-<style scoped>
-.shopping {
-  background-color: black;
-  color: white;
-  padding: 20px;
-  margin-bottom: 10px;
-  margin-top: 20%;
-}
-
-
-h2, h3 {
-  background-color: black;
-  color: white;
-}
-
-
-.hello { background-color: black;}
-
-
-p { background-color: black;}
-.cart-item {
-  margin-bottom: 10px;
-}
-</style>
- -->
-
-
-
-
-
-
-
  <template>
   <h2>Shopping Cart</h2>
   <div class="shopping">
@@ -92,9 +27,9 @@ const props = defineProps({
   cart: Array
 });
 function removeCard(item) {
-  const index = props.cart.indexOf(item); // Find index of the item in cart
-    props.cart.splice(index, 1); // Remove item from cart array
-    // Update total price
+  const index = props.cart.indexOf(item);
+    props.cart.splice(index, 1); 
+
   
 }
        
